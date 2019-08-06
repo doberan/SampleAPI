@@ -5,4 +5,6 @@ package jp.doberan.sampleapiserver;
 
 interface IAPIService {
     boolean logNumber(int a);
+    boolean setNumber(int a);
+    int getNumber();
 }

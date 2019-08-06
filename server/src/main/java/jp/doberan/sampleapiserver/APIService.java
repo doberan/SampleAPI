@@ -27,6 +27,8 @@ public class APIService extends Service {
     }
 
     private IAPIService.Stub mAPIService = new IAPIService.Stub() {
+        private int number = -1;
+
         @Override
         public boolean logNumber(int a) throws RemoteException {
             if (a <= -1) { return false; }
@@ -38,6 +40,17 @@ public class APIService extends Service {
                 }
             });
             return true;
+        }
+
+        @Override
+        public boolean setNumber(int a) throws RemoteException {
+            number = a;
+            return true;
+        }
+
+        @Override
+        public synchronized int getNumber() throws RemoteException {
+            return number;
         }
     };
 }

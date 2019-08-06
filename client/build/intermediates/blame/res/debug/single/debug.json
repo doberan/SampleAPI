@@ -16,12 +16,12 @@
         "source": "C:\\Users\\ISPFS\\.gradle\\caches\\transforms-2\\files-2.1\\bd0534607cedcebca765f4fa3d8bef8d\\res\\drawable\\abc_ic_clear_material.xml"
     },
     {
-        "merged": "C:\\Users\\ISPFS\\masaya_suzuki\\source\\sample\\SampleAPI\\client\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_list_pressed_holo_light.9.png.flat",
-        "source": "C:\\Users\\ISPFS\\.gradle\\caches\\transforms-2\\files-2.1\\bd0534607cedcebca765f4fa3d8bef8d\\res\\drawable-hdpi-v4\\abc_list_pressed_holo_light.9.png"
-    },
-    {
         "merged": "C:\\Users\\ISPFS\\masaya_suzuki\\source\\sample\\SampleAPI\\client\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_textfield_search_default_mtrl_alpha.9.png.flat",
         "source": "C:\\Users\\ISPFS\\.gradle\\caches\\transforms-2\\files-2.1\\bd0534607cedcebca765f4fa3d8bef8d\\res\\drawable-xxhdpi-v4\\abc_textfield_search_default_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "C:\\Users\\ISPFS\\masaya_suzuki\\source\\sample\\SampleAPI\\client\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_list_pressed_holo_light.9.png.flat",
+        "source": "C:\\Users\\ISPFS\\.gradle\\caches\\transforms-2\\files-2.1\\bd0534607cedcebca765f4fa3d8bef8d\\res\\drawable-hdpi-v4\\abc_list_pressed_holo_light.9.png"
     },
     {
         "merged": "C:\\Users\\ISPFS\\masaya_suzuki\\source\\sample\\SampleAPI\\client\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_list_focused_holo.9.png.flat",

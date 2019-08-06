@@ -55,6 +55,24 @@ reply.writeNoException();
 reply.writeInt(((_result)?(1):(0)));
 return true;
 }
+case TRANSACTION_setNumber:
+{
+data.enforceInterface(descriptor);
+int _arg0;
+_arg0 = data.readInt();
+boolean _result = this.setNumber(_arg0);
+reply.writeNoException();
+reply.writeInt(((_result)?(1):(0)));
+return true;
+}
+case TRANSACTION_getNumber:
+{
+data.enforceInterface(descriptor);
+int _result = this.getNumber();
+reply.writeNoException();
+reply.writeInt(_result);
+return true;
+}
 default:
 {
 return super.onTransact(code, data, reply, flags);
@@ -94,8 +112,47 @@ _data.recycle();
 }
 return _result;
 }
+@Override public boolean setNumber(int a) throws android.os.RemoteException
+{
+android.os.Parcel _data = android.os.Parcel.obtain();
+android.os.Parcel _reply = android.os.Parcel.obtain();
+boolean _result;
+try {
+_data.writeInterfaceToken(DESCRIPTOR);
+_data.writeInt(a);
+mRemote.transact(Stub.TRANSACTION_setNumber, _data, _reply, 0);
+_reply.readException();
+_result = (0!=_reply.readInt());
+}
+finally {
+_reply.recycle();
+_data.recycle();
+}
+return _result;
+}
+@Override public int getNumber() throws android.os.RemoteException
+{
+android.os.Parcel _data = android.os.Parcel.obtain();
+android.os.Parcel _reply = android.os.Parcel.obtain();
+int _result;
+try {
+_data.writeInterfaceToken(DESCRIPTOR);
+mRemote.transact(Stub.TRANSACTION_getNumber, _data, _reply, 0);
+_reply.readException();
+_result = _reply.readInt();
+}
+finally {
+_reply.recycle();
+_data.recycle();
+}
+return _result;
+}
 }
 static final int TRANSACTION_logNumber = (android.os.IBinder.FIRST_CALL_TRANSACTION + 0);
+static final int TRANSACTION_setNumber = (android.os.IBinder.FIRST_CALL_TRANSACTION + 1);
+static final int TRANSACTION_getNumber = (android.os.IBinder.FIRST_CALL_TRANSACTION + 2);
 }
 public boolean logNumber(int a) throws android.os.RemoteException;
+public boolean setNumber(int a) throws android.os.RemoteException;
+public int getNumber() throws android.os.RemoteException;
 }
