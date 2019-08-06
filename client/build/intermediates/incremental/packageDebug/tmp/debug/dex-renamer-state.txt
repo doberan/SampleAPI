@@ -1,7 +1,0 @@
-#Tue Aug 06 12:35:17 JST 2019
-base.0=C\:\\Users\\ISPFS\\masaya_suzuki\\source\\sample\\SampleAPI\\client\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\out
-path.1=classes.dex
-renamed.1=classes2.dex
-path.0=classes.dex
-renamed.0=classes.dex
-base.1=C\:\\Users\\ISPFS\\masaya_suzuki\\source\\sample\\SampleAPI\\client\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\out
