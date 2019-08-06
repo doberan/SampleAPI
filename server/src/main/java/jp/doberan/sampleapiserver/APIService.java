@@ -11,8 +11,9 @@ import android.widget.Toast;
 
 import java.util.concurrent.atomic.AtomicInteger;
 
-import jp.doberan.sampleapiserver.IAPIService;
-
+/**
+ * API Service
+ */
 public class APIService extends Service {
 
     @Nullable
@@ -26,9 +27,16 @@ public class APIService extends Service {
         super.onDestroy();
     }
 
+    // API Stub
     private IAPIService.Stub mAPIService = new IAPIService.Stub() {
         private int number = -1;
 
+        /**
+         * Display log number
+         * @param a display number
+         * @return never true
+         * @throws RemoteException disconnecting error
+         */
         @Override
         public boolean logNumber(int a) throws RemoteException {
             if (a <= -1) { return false; }
@@ -42,12 +50,23 @@ public class APIService extends Service {
             return true;
         }
 
+        /**
+         * Set number
+         * @param a setting number
+         * @return never true
+         * @throws RemoteException disconnecting error
+         */
         @Override
         public boolean setNumber(int a) throws RemoteException {
             number = a;
             return true;
         }
 
+        /**
+         * Get number.
+         * @return number
+         * @throws RemoteException disconnecting error
+         */
         @Override
         public synchronized int getNumber() throws RemoteException {
             return number;

@@ -6,9 +6,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.ServiceConnection;
 import android.os.Bundle;
-import android.os.Handler;
 import android.os.IBinder;
-import android.os.Looper;
 import android.os.RemoteException;
 import android.support.annotation.Nullable;
 import android.view.View;
@@ -20,29 +18,37 @@ import jp.doberan.sampleapiserver.IAPIService;
 
 
 public class SampleApiActivity extends Activity {
+    // APIService interface
     private IAPIService mService;
+    // Button for interface function execute
     private Button mButton;
+    // Text view for displaying results
     private TextView mResultText;
+    // APIService package name
     public static final String API_SERVICE_PACKAGE_NAME = "jp.doberan.sampleapiserver";
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        // Set layout.
         setContentView(R.layout.activity_main);
     }
 
     @Override
     protected void onResume() {
         super.onResume();
+        // Find layout for button
         if(mButton == null) {
             mButton = findViewById(R.id.button);
             mButton.setOnClickListener(mButtonClickListener);
         }
 
+        // Find layout for result text view
         if(mResultText == null) {
             mResultText = findViewById(R.id.result);
         }
 
+        // Start service
         if(mService == null) {
             serviceStart();
         }
@@ -61,6 +67,7 @@ public class SampleApiActivity extends Activity {
         mService = null;
     }
 
+    // Button click action.
     Button.OnClickListener mButtonClickListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
@@ -75,6 +82,9 @@ public class SampleApiActivity extends Activity {
         }
     };
 
+    /**
+     * Service start
+     */
     private void serviceStart() {
         if(mButton != null) {
             mButton.setEnabled(false);
@@ -84,6 +94,7 @@ public class SampleApiActivity extends Activity {
         bindService(intent, mServiceConnection, Context.BIND_AUTO_CREATE);
     }
 
+    // Service connection action
     private ServiceConnection mServiceConnection = new ServiceConnection() {
         @Override
         public void onServiceConnected(ComponentName name, IBinder service) {
